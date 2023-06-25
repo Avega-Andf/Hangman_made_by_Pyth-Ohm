@@ -16,7 +16,7 @@ def clear():
 ## Funciones
 
 + def palabras(idioma):
-  <details><summary> Funcion :</summary><p> 
+<details><summary> Funcion :</summary><p> 
   
 ``` python
 def palabras(idioma):
@@ -131,7 +131,7 @@ def palabras(idioma):
 </p></details></br>
 
 + def elegirpalabra():
-  <details><summary> Funcion :</summary><p> 
+<details><summary> Funcion :</summary><p> 
   
 ``` python
   def elegirpalabra(lista, y):
