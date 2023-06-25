@@ -1,10 +1,16 @@
 # Hangman Game made by pyth - OHM
 ## Bibliotecas
 + Import random
-
+random.choice()
 + Import time
-   +a  
+time.sleep()
 + Import Os
+  ```python
+      if os.name == "nt":
+        os.system("cls")
+    else:
+        os.system("clear")
+   ```
 
 ## Funciones
 
