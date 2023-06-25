@@ -1,4 +1,4 @@
-# TALLER 2, Hecho por.. PYTH-OHM :D
+# Hangman game made by Pyth - Ohm
 #### Integrantes:
 ##### Tomas Santiago Forero Duarte
 ##### Andrés David Ortiz Rivas
