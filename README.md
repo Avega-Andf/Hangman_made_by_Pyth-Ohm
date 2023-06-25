@@ -1,9 +1,22 @@
 # Hangman Game made by pyth - OHM
 ## Bibliotecas
 ##### Import random
-+ random.choice()
-##### Import time
+La biblioteca import random nos sirve para importar el módulo random, que nos da funciones para generar números aleatorios y hacer selecciones aleatorias.
+Al importar random, se obtiene acceso a funciones como random.random() , random.randint() y random.choice() 
++ random.choice()\
+La función random.choice() en Python nos permite elegir de manera aleatoria un elemento de una secuencia, como una lista, una tupla o una cadena de caracteres. En otras palabras, nos brinda la capacidad de seleccionar un elemento al azar de un conjunto de opciones.\
+Daurante la elaboracion de juego utilizamos la funcion para escoger una palabra aletoria dentro de la lista llamada "lista" y a esta esta palabra generada darle la variable "y" la cual seria la palabra que el jugador debe adivinar.
+ ```python 
+palabra = (random.choice(lista[y])).upper() 
+   ```
+##### Import time/
+La biblioteca time nos permite manipular y controlar el tiempo en un programa.
+Ofrece funciones para agregar retardos con time.sleep(), obtener la hora actual con time.time(), obtener la hora local con time.localtime(), y formatear la hora y fecha con time.strftime().
 + time.sleep()
+La función time.sleep() en Python permite hacer una pausa en la ejecución de un programa durante un tiempo determinado.Duranre el codigo la utilizamos para distaciar temporalmente las "imagenes " del ahorcado.
+```python
+
+ ```
 ##### Import Os
   ```python
 def clear():
