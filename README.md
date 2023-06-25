@@ -18,12 +18,15 @@ La función time.sleep() nos permite hacer una pausa en la ejecución de un prog
 
  ```
 ##### Import Os
+La biblioteca ´os´  nos permite interactuar con el sistema operativo en el que se ejecuta el programa.
+Proporciona funciones para manipular archivos y directorios, acceder a variables de entorno del sistema, ejecutar comandos del sistema, manipular rutas de archivos y obtener información del sistema operativo.
+Usamos las siguientes  funciones:
   ```python
-def clear():
-  if os.name == "nt":
-    os.system("cls")
-  else:
-    os.system("clear")
+def clear():#
+  if os.name == "nt": #para verificar si el sistema operativo en el que se está ejecutando el programa es Windows. La variable os.name almacena el nombre del sistema operativo.
+    os.system("cls")#Este comando  se encarga de limpiar la pantalla de la terminal.
+  else: # en casi de que el sistema operativo no sea windows se utiliza la siguiente funcion
+    os.system("clear")#Este comando  se encarga de limpiar la pantalla de la terminal en caso de que no sea windows.
    ```
 
 ## Funciones
