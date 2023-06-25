@@ -114,16 +114,16 @@ Debido a esta situacion, como el GRUPO que somos, nos decidimos por el segundo m
 Una vez decidido el metodo, simplemente nos quedaba decidir la cantidad de vidas que tendria el jugador en cada dificultad, por lo que decidimos las siguientes cantidades:
 ``` text
 
-                                            ----------------------------
-                                            | dificultad | cant. Vidas |
-                                            |--------------------------|
-                                            |--------------------------|
-                                            | Facil      |      8      |
-                                            |--------------------------|
-                                            | Normal     |      6      |
-                                            |--------------------------|
-                                            | Dificil    |      4      |
-                                            |--------------------------|   
+  ----------------------------
+  | dificultad | cant. Vidas |
+  |--------------------------|
+  |--------------------------|
+  | Facil      |      8      |
+  |--------------------------|
+  | Normal     |      6      |
+  |--------------------------|
+  | Dificil    |      4      |
+  |--------------------------|   
 ```
 
 Ya teniendo esto decidido hicimos 2 lineas de codigo pidiendo al jugador que ingrese la dificultad deseada como lo podemos ver a continuacion : 
