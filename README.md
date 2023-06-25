@@ -3,7 +3,7 @@
 + Import random
 
 + Import time
-
+   +a  
 + Import Os
 
 ## Funciones
@@ -34,5 +34,5 @@
     
 + def funcionamineto(adivinar, idioma, vidas):
     
-def funcionamineto2pj(idioma, vida1, vida2):
++ def funcionamineto2pj(idioma, vida1, vida2):
     
