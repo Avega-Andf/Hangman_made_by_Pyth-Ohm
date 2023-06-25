@@ -28,7 +28,31 @@ def clear():#
   else: # en casi de que el sistema operativo no sea windows se utiliza la siguiente funcion
     os.system("clear")#Este comando  se encarga de limpiar la pantalla de la terminal en caso de que no sea windows.
    ```
-
+## Funcionamiento logico del juego
+  ```mermaid
+flowchart TD
+graph TD;
+    inicio --> A[Elegir idioma \n 1. Español \n 2. Inglés];
+    A --> B[Animación de inicio];
+    B --> C[Elegir 1 o 2 jugadores];
+    C --> D[se imprime las temáticas];
+    D --> E[El usuario elege la temática];
+    E --> F[Elegir dificultad];
+    F -->|Fácil \n 8 vidas| G[La maquina elige una palabra al azar];
+    F -->|Normal, \n 6 vidas| G;
+    F -->|Difícil, \n 4 vidas| G;
+    G --> H[Imprimir dibujo, \n Imprime lista de ' _ ' segun la cantidad de digitos que tenga la palabra que eligio la maquina ];
+    H --> J[Preguntar al jugador por una consonante o vocal];
+    J -->Z[La letra esta en la palabra]
+    Z --> a[Si] --> X[La palabra esta completa?]--> b[Si]
+    X --> c[no] --> y[El dibujo sigue igual \n Se Actualiza la lista de palabra ' _ '] --> H
+    Z --> No --> Y[Se resta una vida] --> h[Tiene mas vidas?] --> r[si];
+    h --> d[no]
+    d --> k[Game over \n Aparece pantalla de game over, y le dice al usario cual era la palabra]
+    r --> i[Se actualiza el dibujo \n la lista de la palabra ' _ ', sigue igual];
+    i --> H;
+    b --> lo[Ganaste \n Aparece animacion de ganar ]
+ ```
 ## Funciones
 
 + def palabras(idioma):
