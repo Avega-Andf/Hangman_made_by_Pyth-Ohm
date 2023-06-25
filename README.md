@@ -9,7 +9,7 @@ Daurante la elaboracion de juego utilizamos la funcion para escoger una palabra 
  ```python 
 palabra = (random.choice(lista[y])).upper() 
    ```
-##### Import time\
+##### Import time
 La biblioteca time nos permite manipular y controlar el tiempo en un programa.
 Ofrece funciones para agregar retardos con time.sleep(), obtener la hora actual con time.time(), obtener la hora local con time.localtime(), y formatear la hora y fecha con time.strftime().
 + time.sleep() 
@@ -55,7 +55,7 @@ flowchart TD
 ```
 ## Funciones
 
-+ def palabras(idioma):
+##### def palabras(idioma):
 <details><summary> Funcion :</summary><p> 
   
 ``` python
@@ -179,7 +179,7 @@ def palabras(idioma):
 ```
 </p></details></br>
 
-+ def elegirpalabra():
+#####  def elegirpalabra():
 <details><summary> Funcion :</summary><p> 
   
 ``` python
@@ -199,7 +199,7 @@ def palabras(idioma):
   ```
 </p></details></br>
 
-+ def Funcionadivinar(palabra)->list:
+##### def Funcionadivinar(palabra)->list:
   
  <details><summary> Funcion :</summary><p> 
   
@@ -225,7 +225,7 @@ def Funcionadivinar(palabra) -> list:
   ```
 </p></details></br>
 
-+ def inicio(idioma):
+##### def inicio(idioma):
   
  <details><summary> Funcion :</summary><p> 
   
@@ -340,7 +340,7 @@ def inicio(idioma):
   ```
 </p></details></br>
 
-+ def interfaz(idioma):   
+##### def interfaz(idioma):   
   
  <details><summary> Funcion :</summary><p> 
   
@@ -400,9 +400,99 @@ def interfaz(idioma):
         return x, y, dif  
   ```
 </p></details></br>
+Al momento de elegir el método por el cual acoomodariamos la dificultad de juego teniamos 2 opciones: 
+la primera, era por la cantidad de letras de las palabras y la segunda opcion, era por la cantidad de vidas que tendria el jugador.
+Para aumentar o disminuir la dificultad del juego se dicidio por el segundo metodo.
+Una vez decidido el metodo, simplemente nos quedaba decidir la cantidad de vidas que tendria el jugador en cada dificultad, por lo que se decidio las siguientes cantidades:
+``` text
+
+  ----------------------------
+  | dificultad | cant. Vidas |
+  |--------------------------|
+  |--------------------------|
+  | Facil      |      8      |
+  |--------------------------|
+  | Normal     |      6      |
+  |--------------------------|
+  | Dificil    |      4      |
+  |--------------------------|   
+```
+
+Ya teniendo esto decidido hicimos 2 lineas de codigo pidiendo al jugador que ingrese la dificultad deseada como lo podemos ver a continuacion: 
+
+```python
+print("Seleccione la dificultad deseada...\n"+" 1.facil \n"+" 2.normal \n"+" 3.dificil ")
+        dif=int(input(""))
+```
+<details><summary> Nota :</summary><p>  esta parte del codigo se encuentra en la funcion de interfaz que se mostró anteriormente. Ademas de que tambien esta en ingles. 
+</p></details></br>
+
+Para implementar esto en el juego, creamos una funcion para cada dificultad. En estas funciones se mostraba al usuario una imagen dependiendo de la cantidad de vidas que le queden al usuario en la partida. 
+<details><summary> Esto lo podremos observar en el siguiente codigo (correspondiente a la dificultad dificil) :</summary><p> 
+  
+```python
+
+def juegodificil(vidas,idioma):
+    if idioma == 1:
+        mensaje = "tienes "+str(vidas+1)+" vidas"
+    if idioma == 2:
+        mensaje = "You have "+str(vidas+1)+" lives"
+
+    if vidas == 3:
+        vidas3 = [
+        "|"+mensaje+"|",    
+        "+--+           |",
+        "|              |",
+        "|              |",
+        "|              |",
+        "|              |",
+        "|              |",
+        "================"]
+        return vidas3
+    elif vidas == 2:
+        vidas2 = [
+        "|"+mensaje+"|",   
+        "+--+           |",
+        "|   |          |",
+        "|   O          |",
+        "|              |",
+        "|              |",
+        "|              |",
+        "================"]
+        return vidas2
+    elif vidas == 1:
+        vidas1 = [
+        "|"+mensaje+"|",
+        "+---+          |",
+        "|   |          |",
+        "|   O          |",
+        "|  /|\         |",
+        "|              |",
+        "|              |",
+        "================"]
+        return vidas1
+    elif vidas == 0:
+        vidas0 = [
+        "|"+mensaje+"|",
+        "+---+          |",
+        "|   |          |",
+        "|   O          |",
+        "|  /|\         |",
+        "|  / \         |",
+        "|              |",
+        "================"]
+        return vidas0
+        
+```
+Este proceso se hizo tambien para las otras dificultades, pero teniendo en cuenta, que las partes del "ahorcado" que se agregen por cada vida perdida sean proporocionales a las cantidad de vida de cada dificultad.
+Tambien se agrego un mensaje que muestre la cantidad de vidas faltantes.
+
+Nota: Estas funciones sirven gracias a un ciclo externo, dicho ciclo hace el proceso de validar las letras y definir las vidas restantes y a su vez cada que hace eso, llama a estas funciones ( dificultad ) para mostrarnos la imagen adecuada a la cantidad de vidas restantes.    
+
+</p></details></br>
 
 
-+ def juegofacil(vidas,idioma):
+##### def juegofacil(vidas,idioma):
    
  <details><summary> Funcion :</summary><p> 
   
@@ -515,7 +605,7 @@ def juegofacil(vidas,idioma):
 </p></details></br>
 
 
-+ def juegonormal(vidas,idioma):
+##### def juegonormal(vidas,idioma):
    
  <details><summary> Funcion :</summary><p> 
   
@@ -608,7 +698,7 @@ def juegonormal(vidas,idioma):
 </p></details></br>
 
 
-+ def juegodificil(vidas,idioma):
+##### def juegodificil(vidas,idioma):
    
  <details><summary> Funcion :</summary><p> 
   
@@ -678,7 +768,7 @@ def juegodificil(vidas,idioma):
 
 
 
-+ def dificultad(dif):
+##### def dificultad(dif):
   
  <details><summary> Funcion :</summary><p> 
   
@@ -707,7 +797,7 @@ def dificultad(dif):
 </p></details></br>
 
  
-+ def llamardificultad(dif,vidas):
+##### def llamardificultad(dif,vidas):
   
  <details><summary> Funcion :</summary><p> 
   
@@ -736,7 +826,7 @@ def llamardificultad(dif,vidas):
 </p></details></br>
 
             
-+ def ganar(idioma):
+##### def ganar(idioma):
   
  <details><summary> Funcion :</summary><p> 
   
@@ -833,7 +923,7 @@ def ganar(idioma):
 </p></details></br>
 
     
-+ def perder(vidas,idioma):
+##### def perder(vidas,idioma):
   
  <details><summary> Funcion :</summary><p> 
   
@@ -868,7 +958,7 @@ def perder(vidas,idioma):
 </p></details></br>
 
   
-+ def funcionamineto(adivinar, idioma, vidas):
+##### def funcionamineto(adivinar, idioma, vidas):
   
  <details><summary> Funcion :</summary><p> 
   
@@ -923,7 +1013,7 @@ def funcionamineto(adivinar, idioma, vidas):
 </p></details></br>
 
     
-+ def funcionamineto2pj(idioma, vida1, vida2):
+##### funcionamineto2pj(idioma, vida1, vida2):
   
  <details><summary> Funcion :</summary><p> 
   
@@ -1139,93 +1229,3 @@ El inicio, La interfaz, En cada una de las dificultades y otras partes.
 
 ## Dificultad
 
-Al momento de elegir el método por el cual acoomodariamos la dificultad de juego teniamos 2 opciones: 
-la primera, era por la cantidad de letras de las palabras y la segunda opcion, era por la cantidad de vidas que tendria el jugador.
-Debido a esta situacion, como el GRUPO que somos, nos decidimos por el segundo metodo.
-Una vez decidido el metodo, simplemente nos quedaba decidir la cantidad de vidas que tendria el jugador en cada dificultad, por lo que decidimos las siguientes cantidades:
-``` text
-
-  ----------------------------
-  | dificultad | cant. Vidas |
-  |--------------------------|
-  |--------------------------|
-  | Facil      |      8      |
-  |--------------------------|
-  | Normal     |      6      |
-  |--------------------------|
-  | Dificil    |      4      |
-  |--------------------------|   
-```
-
-Ya teniendo esto decidido hicimos 2 lineas de codigo pidiendo al jugador que ingrese la dificultad deseada como lo podemos ver a continuacion : 
-
-```python
-print("Seleccione la dificultad deseada...\n"+" 1.facil \n"+" 2.normal \n"+" 3.dificil ")
-        dif=int(input(""))
-```
-<details><summary> Nota :</summary><p>  esta parte del codigo se encuentra en la funcion de interfaz que se mostró anteriormente. Ademas de que tambien esta en ingles. 
-</p></details></br>
-
-Para implementar esto en el juego, creamos una funcion para cada dificultad. En estas funciones se mostraba al usuario una imagen dependiendo de la cantidad de vidas que le queden al usuario en la partida. 
-<details><summary> Esto lo podremos observar en el siguiente codigo (correspondiente a la dificultad dificil) :</summary><p> 
-  
-```python
-
-def juegodificil(vidas,idioma):
-    if idioma == 1:
-        mensaje = "tienes "+str(vidas+1)+" vidas"
-    if idioma == 2:
-        mensaje = "You have "+str(vidas+1)+" lives"
-
-    if vidas == 3:
-        vidas3 = [
-        "|"+mensaje+"|",    
-        "+--+           |",
-        "|              |",
-        "|              |",
-        "|              |",
-        "|              |",
-        "|              |",
-        "================"]
-        return vidas3
-    elif vidas == 2:
-        vidas2 = [
-        "|"+mensaje+"|",   
-        "+--+           |",
-        "|   |          |",
-        "|   O          |",
-        "|              |",
-        "|              |",
-        "|              |",
-        "================"]
-        return vidas2
-    elif vidas == 1:
-        vidas1 = [
-        "|"+mensaje+"|",
-        "+---+          |",
-        "|   |          |",
-        "|   O          |",
-        "|  /|\         |",
-        "|              |",
-        "|              |",
-        "================"]
-        return vidas1
-    elif vidas == 0:
-        vidas0 = [
-        "|"+mensaje+"|",
-        "+---+          |",
-        "|   |          |",
-        "|   O          |",
-        "|  /|\         |",
-        "|  / \         |",
-        "|              |",
-        "================"]
-        return vidas0
-        
-```
-Este proceso se hizo tambien para las otras dificultades, pero teniendo en cuenta, que las partes del "ahorcado" que se agregen por cada vida perdida sean proporocionales a las cantidad de vida de cada dificultad.
-Tambien se agrego un mensaje que muestre la cantidad de vidas faltantes.
-
-Nota: Estas funciones sirven gracias a un ciclo externo, dicho ciclo hace el proceso de validar las letras y definir las vidas restantes y a su vez cada que hace eso, llama a estas funciones ( dificultad ) para mostrarnos la imagen adecuada a la cantidad de vidas restantes.    
-
-</p></details></br>
