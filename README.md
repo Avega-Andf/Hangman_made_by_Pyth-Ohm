@@ -29,9 +29,9 @@ def clear():#
     os.system("clear")#Este comando  se encarga de limpiar la pantalla de la terminal en caso de que no sea windows.
    ```
 ## Funcionamiento logico del juego
-  ```mermaid
+
+```mermaid
 flowchart TD
-graph TD;
     inicio --> A[Elegir idioma \n 1. Español \n 2. Inglés];
     A --> B[Animación de inicio];
     B --> C[Elegir 1 o 2 jugadores];
@@ -52,7 +52,7 @@ graph TD;
     r --> i[Se actualiza el dibujo \n la lista de la palabra ' _ ', sigue igual];
     i --> H;
     b --> lo[Ganaste \n Aparece animacion de ganar ]
- ```
+```
 ## Funciones
 
 + def palabras(idioma):
