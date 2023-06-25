@@ -2,7 +2,7 @@
 ##### Import random
 La biblioteca import random nos sirve para importar el módulo random, que nos da funciones para generar números aleatorios y hacer selecciones aleatorias.
 Al importar random, se obtiene acceso a funciones como random.random() , random.randint() y random.choice() 
-+ random.choice()\
++ **random.choice()**
 La función random.choice() en Python nos permite elegir de manera aleatoria un elemento de una secuencia, como una lista, una tupla o una cadena de caracteres. En otras palabras, nos brinda la capacidad de seleccionar un elemento al azar de un conjunto de opciones.\
 Daurante la elaboracion de juego utilizamos la funcion para escoger una palabra aletoria dentro de la lista llamada "lista" y a esta esta palabra generada darle la variable "y" la cual seria la palabra que el jugador debe adivinar.
  ```python 
@@ -11,7 +11,7 @@ palabra = (random.choice(lista[y])).upper()
 ##### Import time
 La biblioteca time nos permite manipular y controlar el tiempo en un programa.
 Ofrece funciones para agregar retardos con time.sleep(), obtener la hora actual con time.time(), obtener la hora local con time.localtime(), y formatear la hora y fecha con time.strftime().
-+ time.sleep() 
++ **time.sleep()** 
 La función time.sleep() nos permite hacer una pausa en la ejecución de un programa durante un tiempo determinado.Duranre el codigo la utilizamos para distaciar temporalmente las "imagenes " del ahorcado.
 ```python
 time.sleep()
@@ -74,10 +74,11 @@ De esta manera primero le pedimos al usuario que digite la opcion de idioma que 
 
 <br>
 
-Deacuerdo al dato ingresado por el usuario  modificamos todas las partes del codigo que incluyan texto. Esta modificacion la hicimos por medio del condicional "if", dentro del cual, colocamos la siguiente condicion. 
-Sí la variable llamada idioma era igual a 1 entonces el codigo mostraria el texto en Español, y por el contrario, si dicha variable era igual a 2 entoces mostraria el texto en Ingles.
+Deacuerdo al dato ingresado por el usuario  modificamos todas las partes del codigo que incluyan texto.
+<br>
+Esta modificacion la hicimos por medio del condicional "if", dentro del cual, colocamos la condicion, de que si el usuario digita 1, se mostrara todo en Español, y si digita 2, se mostrara todo en Ingles. 
 
-<details><summary> Ejemplo funcion interfaz :</summary><p>
+<details><summary> Ejemplo de uso en la funcion interfaz :</summary><p>
  
 ``` python
  def interfaz(idioma):
@@ -125,18 +126,18 @@ Sí la variable llamada idioma era igual a 1 entonces el codigo mostraria el tex
    ```
 </p></details></br>
 
-Con esto en mente, aplicamos este mismo concepto en las partes del codigo que lo requerian, como:
+Teniendo esto en cuenta, aplicamos este mismo concepto en las partes del codigo que lo requerian, como:
 + El inicio
 + La interfaz
 + En cada una de las dificultades.
 + En el texto que sale al preguntar las letras
 + El diccionario con todas las palabras 
-Al prinicipio del codigo se le preguntara al usuario 
 
 ### Animacion inicial
+
 Luego de haber elegido el idioma, saltara una animacion de inicio, esta se realizo utilizando la biblioteca time con el codigo time.sleep() y la biblioteca Os, la cual limpia el terminal cada vez que se llama, usando clear().
 
-<details><summary> Funcion :</summary><p> 
+<details><summary> Funcion inicio(idioma) :</summary><p> 
   
 ``` python
 def inicio(idioma):
@@ -250,14 +251,17 @@ def inicio(idioma):
 </p></details></br>
 
 ### Palabras
-La Funcion palabras
+**La Funcion palabras**
 <br>
-Para almacenar las palabras que usa el juego, se opto por el uso de un diccionario donde la llave es una valor numerico, cada llave regresa una lista de palabras con una tematica diferente. 
+Para almacenar las palabras que usa el juego, se opto por el uso de un diccionario donde la llave es una valor numerico, cada llave regresa una lista de palabras con una tematica diferente. Esta funcion retorna un diccionario con palabras.
 <br>
-La Funcion Elegir palabras
+**La Funcion Elegir palabra**
+<br>
+Para el juego del ahorcado se necesita que se escoja una palabra al azar, la cual el jugador va a tener que adivinar, asi que usando la biblioteca random, se escogera una palabra mediante el codigo random.choice(), Esta funcion retorna una palabra al azar de una lista del diccionario la cual depende de la tematica (Definida por el usuario).
 
 
-<details><summary> Diccionario de palabras :</summary><p> 
+
+<details><summary> Funcion def palabras(idioma) :</summary><p> 
   
 ``` python
 def palabras(idioma):
@@ -379,7 +383,7 @@ def palabras(idioma):
     return lista
 ```
 </p></details></br>
-<details><summary> Elegir palabra :</summary><p> 
+<details><summary> Funcion elegirpalabra(lista,y) :</summary><p> 
   
 ``` python
   def elegirpalabra(lista, y):
@@ -399,8 +403,12 @@ def palabras(idioma):
 </p></details></br>
 
 ### Interfaz
+Para definir las distintas modalidades del juego (Como la eleccion de 1 o 2 jugadores, la tematica o la dificultad), se realizo una funcion llamada interfaz, que al ejecutarla la pregunta al usuario los siguientes valores y los retornara:
++ x: Variable que definira si el juego es para 1 o para 2 personas
++ y: Variable que definira la tematica del ahorcado
++ dif: Variable que definiria la dificultad del juego
 
-<details><summary> Funcion :</summary><p> 
+<details><summary> Funcion def interfaz(idioma) :</summary><p> 
   
 ``` python
 def interfaz(idioma):
@@ -458,6 +466,8 @@ def interfaz(idioma):
         return x, y, dif  
   ```
 </p></details></br>
+
+
 
 
 ### Dificultad
@@ -554,44 +564,7 @@ Tambien se agrego arriba del dibujo un mensaje queva mostrando la cantidad de vi
 
 
 
-## Funciones
 
-##### def palabras(idioma):
-
-
-#####  def elegirpalabra():
-
-
-##### def Funcionadivinar(palabra)->list:
-  
- <details><summary> Funcion :</summary><p> 
-  
-``` python
-def Funcionadivinar(palabra) -> list:
-    """
-    Esta función genera una lista con caracteres a adivinar basados en una palabra.
-
-    Args:
-        palabra (str): La palabra de la cual se generarán los caracteres a adivinar.
-
-    Returns:
-        list: Una lista con caracteres a adivinar. Cada carácter es "_" excepto los espacios, que se mantienen como " ".
-    """
-    adivinar = []
-    for i in palabra:
-        if i == " ":
-            adivinar.append(" ")
-        else:
-            adivinar.append("_")
-
-    return adivinar  
-  ```
-</p></details></br>
-
-##### def inicio(idioma):
-  
-
-##### def interfaz(idioma):   
   
  
 ##### def juegofacil(vidas,idioma):
@@ -927,7 +900,7 @@ def llamardificultad(dif,vidas):
   ```
 </p></details></br>
 
-            
+### Fin del juego 
 ##### def ganar(idioma):
   
  <details><summary> Funcion :</summary><p> 
@@ -1060,9 +1033,41 @@ def perder(vidas,idioma):
 </p></details></br>
 
   
-##### def funcionamineto(adivinar, idioma, vidas):
+### Funcionamiento
+**La funcion adivinar**
+<br>
+Esta funcion depende de la variable palabra, (Palabra elegida al azar mediante la funcion elegir palabra), el proposito de esta funcion es hacer el caracteristico espacio para adivinar palabras del juego de ahorcado ejemplo:
++ Palabra: perro --> Funcion adivinar --> _ _ _ _ _
+
+<details><summary> Funcion Adivinar palabra :</summary><p> 
   
- <details><summary> Funcion :</summary><p> 
+``` python
+def Funcionadivinar(palabra) -> list:
+    """
+    Esta función genera una lista con caracteres a adivinar basados en una palabra.
+
+    Args:
+        palabra (str): La palabra de la cual se generarán los caracteres a adivinar.
+
+    Returns:
+        list: Una lista con caracteres a adivinar. Cada carácter es "_" excepto los espacios, que se mantienen como " ".
+    """
+    adivinar = []
+    for i in palabra:
+        if i == " ":
+            adivinar.append(" ")
+        else:
+            adivinar.append("_")
+
+    return adivinar  
+  ```
+</p></details></br>
+
+ **La funcion funcionamiento(1 jugador)**
+<br>
+Esta funcion es la que une todas las funciones vistas anteriormente para que el juego corra,
+
+ <details><summary> Funcion funcionamineto(adivinar, idioma, vidas):</summary><p> 
   
 ``` python
 def funcionamineto(adivinar, idioma, vidas):
@@ -1115,7 +1120,7 @@ def funcionamineto(adivinar, idioma, vidas):
 </p></details></br>
 
     
-##### funcionamineto2pj(idioma, vida1, vida2):
+
   
  <details><summary> Funcion :</summary><p> 
   
@@ -1262,6 +1267,9 @@ def funcionamineto2pj(idioma, vida1, vida2):
 </p></details></br>
 
   
+
+
+
 
 
 
