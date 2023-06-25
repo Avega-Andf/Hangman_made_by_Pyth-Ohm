@@ -1,3 +1,12 @@
+# TALLER 2, Hecho por.. PYTH-OHM :D
+#### Integrantes:
+##### Tomas Santiago Forero Duarte
+##### Andrés David Ortiz Rivas
+##### Andrés Felipe Vega Bermeo
+# 
+#### Logo de pyth - Ohm:
+[![c67e2c4b-33f7-417f-94a8-1adc607ac09f.jpg](https://i.postimg.cc/bvbvZzwZ/c67e2c4b-33f7-417f-94a8-1adc607ac09f.jpg)](https://postimg.cc/GBLRNnYR)
+#
 ## Bibliotecas
 ##### Import random
 La biblioteca import random nos sirve para importar el módulo random, que nos da funciones para generar números aleatorios y hacer selecciones aleatorias.
