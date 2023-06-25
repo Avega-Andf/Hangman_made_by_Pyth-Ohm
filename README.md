@@ -6,6 +6,7 @@
 + time.sleep()
 ##### Import Os
   ```python
+def clear():
   if os.name == "nt":
     os.system("cls")
   else:
@@ -16,27 +17,25 @@
 
 + def palabras(idioma):
 
++ def elegirpalabra():
++ def Funcionadivinar(palabra)->list:
 + def inicio(idioma):
-   
-+ def juegonormal(vidas,idioma):
-   
+
++ def interfaz(idioma):   
+
 + def juegofacil(vidas,idioma):
-   
++ def juegonormal(vidas,idioma): 
 + def juegodificil(vidas,idioma):
-   
-+ def interfaz(idioma):
-   
-+ def ganar(idioma):
-    
-+ def perder(vidas,idioma):
-        
+
 + def dificultad(dif):
     
 + def llamardificultad(dif,vidas):
             
-+ def elegirpalabra():
++ def ganar(idioma):
     
-+ def Funcionadivinar(palabra)->list: 
++ def perder(vidas,idioma):
+    
+ 
     
 + def funcionamineto(adivinar, idioma, vidas):
     
