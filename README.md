@@ -15,7 +15,7 @@ Ofrece funciones para agregar retardos con time.sleep(), obtener la hora actual 
 + time.sleep() \
 La función time.sleep() nos permite hacer una pausa en la ejecución de un programa durante un tiempo determinado.Duranre el codigo la utilizamos para distaciar temporalmente las "imagenes " del ahorcado.
 ```python
-
+time.sleep()
  ```
 ##### Import Os
 La biblioteca ´os´  nos permite interactuar con el sistema operativo en el que se ejecuta el programa.
