@@ -397,7 +397,9 @@ def palabras(idioma):
     return Epalabra
   ```
 </p></details></br>
+
 ### Interfaz
+
 <details><summary> Funcion :</summary><p> 
   
 ``` python
