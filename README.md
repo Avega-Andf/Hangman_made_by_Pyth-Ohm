@@ -273,6 +273,7 @@ Para el juego del ahorcado se necesita que se escoja una palabra al azar, la cua
 <details><summary> Funcion def palabras(idioma) :</summary><p> 
   
 ``` python
+
 def palabras(idioma):
     """
     Esta función devuelve un diccionario de palabras según el idioma seleccionado.
@@ -395,6 +396,7 @@ def palabras(idioma):
 <details><summary> Funcion elegirpalabra(lista,y) :</summary><p> 
   
 ``` python
+
   def elegirpalabra(lista, y):
     """
     Esta función elige una palabra al azar de una lista y la devuelve en mayúsculas.
@@ -420,6 +422,7 @@ Para definir las distintas modalidades del juego (Como la eleccion de 1 o 2 juga
 <details><summary> Funcion def interfaz(idioma) :</summary><p> 
   
 ``` python
+
 def interfaz(idioma):
     """
     Esta función muestra la interfaz de configuración del juego del ahorcado en el idioma especificado.
@@ -510,7 +513,9 @@ Para implementar esto en el juego, creamos una funcion para cada dificultad. En 
 + Esto lo podremos observar en el siguiente codigo (correspondiente a la dificultad dificil)
 
 <details><summary> Funcion dificultad dificil :</summary><p>
+ 
 ```python
+ 
 def juegodificil(vidas,idioma):
     if idioma == 1:
         mensaje = "tienes "+str(vidas+1)+" vidas"
