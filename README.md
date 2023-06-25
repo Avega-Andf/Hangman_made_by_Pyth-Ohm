@@ -61,21 +61,26 @@ Para configurar el idioma de nuestro proyecto utilizamos los siguientes dos idio
 + Ingles
 
 <br>
+
 lo configuramos de la siguiente manera :
-+ Antes de ejecutar el codigo y llamar las funciones, en la funcion main, colocamos el siguiente codigo : 
++ Antes de ejecutar el codigo y llamar las funciones, en la funcion main, colocamos el siguiente codigo :
+
 ``` python
 print("Digite el idioma deseado :\n 1.Español \n 2.English")
     idioma=int(input(""))
-```
+ ```
+
 De esta manera primero le pedimos al usuario que digite la opcion de idioma que desee y la guardamos en una variable de tipo entero, llamada "idioma".
+
 <br>
+
 Deacuerdo al dato ingresado por el usuario  modificamos todas las partes del codigo que incluyan texto. Esta modificacion la hicimos por medio del condicional "if", dentro del cual, colocamos la siguiente condicion. 
 Sí la variable llamada idioma era igual a 1 entonces el codigo mostraria el texto en Español, y por el contrario, si dicha variable era igual a 2 entoces mostraria el texto en Ingles.
 
-<details><summary> Ejemplo funcion interfaz :</summary><p> 
-  ``` python
-
-def interfaz(idioma):
+<details><summary> Ejemplo funcion interfaz :</summary><p>
+ 
+``` python
+ def interfaz(idioma):
     if idioma==1:
         print("JUEGO DEL AHORCADO")
         print("Bienvenido al juego, quieres jugar solo o de a dos personas:?")
@@ -117,7 +122,7 @@ def interfaz(idioma):
         if dif<1 or dif>3:
             print("Esta opcion no existe ")
         return x, y, dif
-```
+   ```
 </p></details></br>
 
 Con esto en mente, aplicamos este mismo concepto en las partes del codigo que lo requerian, como:
@@ -130,7 +135,8 @@ Al prinicipio del codigo se le preguntara al usuario
 
 ### Animacion inicial
 Luego de haber elegido el idioma, saltara una animacion de inicio, esta se realizo utilizando la biblioteca time con el codigo time.sleep() y la biblioteca Os, la cual limpia el terminal cada vez que se llama, usando clear().
- <details><summary> Funcion :</summary><p> 
+
+<details><summary> Funcion :</summary><p> 
   
 ``` python
 def inicio(idioma):
