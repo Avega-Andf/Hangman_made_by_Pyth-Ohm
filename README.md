@@ -36,6 +36,15 @@ def clear():#
   
 ``` python
 def palabras(idioma):
+    """
+    Esta función devuelve un diccionario de palabras según el idioma seleccionado.
+    
+    Argumentos:
+        - idioma: entero que representa el idioma seleccionado.
+        
+    Retorna:
+        - lista: Un diccionario con el nombre lista, de palabras correspondiente al idioma seleccionado.
+    """
     if idioma==1: 
         lista = {
         1 : #Frutas
@@ -167,25 +176,875 @@ def palabras(idioma):
 </p></details></br>
 
 + def Funcionadivinar(palabra)->list:
+  
+ <details><summary> Funcion :</summary><p> 
+  
+``` python
+def Funcionadivinar(palabra) -> list:
+    """
+    Esta función genera una lista con caracteres a adivinar basados en una palabra.
+
+    Args:
+        palabra (str): La palabra de la cual se generarán los caracteres a adivinar.
+
+    Returns:
+        list: Una lista con caracteres a adivinar. Cada carácter es "_" excepto los espacios, que se mantienen como " ".
+    """
+    adivinar = []
+    for i in palabra:
+        if i == " ":
+            adivinar.append(" ")
+        else:
+            adivinar.append("_")
+
+    return adivinar  
+  ```
+</p></details></br>
+
 + def inicio(idioma):
+  
+ <details><summary> Funcion :</summary><p> 
+  
+``` python
+def inicio(idioma):
+    """
+    Esta función muestra una secuencia visual de inicio del juego de ahorcado en el idioma especificado.
+
+    Args:
+        idioma (int): El idioma elegido por el usuario. "1" para español, "2" para inglés.
+
+    Returns:
+        None
+    """
+    if idioma == 1: # Definido por el usuario, dependiendo de que idioma se elije, se imprimiran los valores en ingles o en español.
+        mensaje1 = "Bienvenido a AHORCADOS"
+        mensaje2= "Hecho por..."
+        mensaje3="Presione Enter para continuar..."
+    if idioma == 2:
+        mensaje1 = "Welcome to HANGMAN GAME"
+        mensaje2= "Made by..."
+        mensaje3="Press Enter to continue..."
+    clear() # Limpia el terminal
+    iniciar0 = [ 
+        ""+mensaje1+"",
+        "                     ",
+        "                     ",
+        "     "+mensaje2+"    ",
+        "                     ",
+        "                     ",
+        "====================="]
+    for i in iniciar0:
+        print(i)
+    time.sleep(2)
+    clear()
+    iniciar1 = [
+        ""+mensaje1+"",
+        "                     ",
+        "       --------      ",
+        "       PYTH-OHM      ",
+        "       --------      ",
+        "                     ",
+        "====================="]
+    for i in iniciar1:
+        print(i)
+    time.sleep(1)
+    clear()
+    iniciar2 = [
+        ""+mensaje1+"",
+        "                     ",
+        "                     ",
+        "       O    |        ",
+        "      /|\   |        ",
+        "      / \   |---|    ",
+        "====================="]
+    for i in iniciar2:
+        print(i)
+    time.sleep(1)
+    clear()
+    iniciar3 = [
+        ""+mensaje1+"",
+        "                     ",
+        "              O      ",
+        "            |/|\     ",
+        "            |/ \     ",
+        "            |---|    ",
+        "====================="]
+    for i in iniciar3:
+        print(i)
+    time.sleep(1)
+    clear()
+    iniciar4 = [
+        ""+mensaje1+"",
+        "                     ",
+        "             /O\     ",
+        "            |\|/     ",
+        "            |/ \     ",
+        "            |---|    ",
+        "====================="]
+    for i in iniciar4:
+        print(i)
+    time.sleep(1)
+    clear()
+    iniciar5 = [
+        ""+mensaje1+"",
+        "              |      ",
+        "             /O\     ",
+        "            |\|/     ",
+        "            |/ \     ",
+        "            |---|    ",
+        "====================="]
+    for i in iniciar5:
+        print(i)
+    time.sleep(1)
+
+    clear()
+    
+    iniciar6 = [
+        ""+mensaje1+"",
+        "              |      ",
+        "              O      ",
+        "             /|\     ",
+        "           _ / \     ",
+        "      ____|_         ",
+        "====================="]
+    for i in iniciar6:
+        print(i)
+    time.sleep(1)
+    input(str(mensaje3))
+    clear() 
+  
+  ```
+</p></details></br>
 
 + def interfaz(idioma):   
+  
+ <details><summary> Funcion :</summary><p> 
+  
+``` python
+def interfaz(idioma):
+    """
+    Esta función muestra la interfaz de configuración del juego del ahorcado en el idioma especificado.
+
+    Args:
+        idioma (int): El idioma elegido por el usuario. 1 para español, 2 para inglés.
+
+    Returns:
+        tuple: Una tupla que contiene las opciones elegidas por el usuario:
+               (x, y, dif), donde x es la opción de jugar solo o en pareja,
+               y es la opción de temática del ahorcado, y dif es la dificultad seleccionada.
+    """
+    if idioma==1:
+        print("JUEGO DEL AHORCADO")
+        print("Bienvenido al juego, quieres jugar solo o de a dos personas:?")
+        print("1.solo\n2. parejas")
+        x = int(input(""))
+        if x<1 or x>2:
+            print("Esta opcion no existe ")
+            
+        print("Elige la tematica del ahorcado: ")
+        print(" 1. frutas \n 2. superheroes \n 3. animales \n 4.paises \n 5. medios de transporte \n 6. Partes del cuerpo ")
+        print(" 7. Objetos del hogar \n 8. Prendas de vestir \n 9. Generos Musicales \n 10. Escritores famosos ")
+        print(" 11. Equipos de Futbol \n 12. jugadores de furbol \n 13. Cantantes famosos \n 14. Razas de perros")
+        print(" 15. Utiles escolares \n 16. Peliculas famosas \n 17. Pokemon ")
+        y = int(input(""))
+        if y<1 or y>16:
+            print("Esta opcion no existe ")
+        print("Seleccione la dificultad deseada...\n"+" 1.facil \n"+" 2.normal \n"+" 3.dificil ")
+        dif=int(input(""))
+        if dif<1 or dif>3:
+            print("Esta opcion no existe ")
+        return x, y, dif
+    if idioma==2:
+        print("HANGMAN GAME")
+        print("Welcome to the game, do you want to play alone or with two players?")
+        print("1. alone\n2. couples")
+        x = int(input(""))
+        if x<1 or x>2:
+            print("Esta opcion no existe ")
+        print("Choose the theme of Hangman:")
+        print(" 1. fruits \n 2. superheroes \n 3. animals \n 4. countrie \n 5. means of transportation \n 6. body parts")
+        print(" 7. household objects \n 8. clothing \n 9. music genres \n 10. famous writers")
+        print(" 11. soccer teams \n 12. soccer players \n 13. famous singers \n 14. dog breeds")
+        print(" 15. school supplies \n 16. Pokemon")
+        y = int(input(""))
+        if y<1 or y>16:
+            print("Esta opcion no existe ")
+        print("Select the desired difficulty... \n 1.easy\n 2.normal\n 3.difficult")
+        dif=int(input(""))
+        if dif<1 or dif>3:
+            print("Esta opcion no existe ")
+        return x, y, dif  
+  ```
+</p></details></br>
+
 
 + def juegofacil(vidas,idioma):
-+ def juegonormal(vidas,idioma): 
+   
+ <details><summary> Funcion :</summary><p> 
+  
+``` python
+def juegofacil(vidas,idioma):
+    """
+    Esta función muestra la representación gráfica del juego del ahorcado en la dificultad fácil.
+
+    Args:
+        vidas (int): El número de vidas restantes del jugador.
+        idioma (int): El idioma elegido por el jugador. 1 para español, 2 para inglés.
+
+    Returns:
+        list: Una lista que representa la imagen del juego del ahorcado según el número de vidas restantes.
+    """
+    if idioma == 1:
+        mensaje = "tienes "+str(vidas+1)+" vidas"
+    if idioma == 2:
+        mensaje = "You have "+str(vidas+1)+" lives"
+
+    if vidas == 7:
+        vidas7 = [
+        "|"+mensaje+"|",
+        "+              |",
+        "|              |",
+        "|              |",
+        "|              |",
+        "|              |",
+        "|              |",
+        "================"]
+        return vidas7
+    elif vidas == 6:
+        vidas6 = [
+        "|"+mensaje+"|",
+        "+--+           |",
+        "|  |           |",
+        "|              |",
+        "|              |",
+        "|              |",
+        "|              |",
+        "================"]
+        return vidas6
+    elif vidas == 5:
+        vidas5 = [
+        "|"+mensaje+"|",
+        "+---+          |",
+        "|   |          |",
+        "|   O          |",
+        "|              |",
+        "|              |",
+        "|              |",
+        "================"]
+        return vidas5
+    elif vidas == 4:
+        vidas4 = [
+        "|"+mensaje+"|",
+        "+---+          |",
+        "|   |          |",
+        "|   O          |",
+        "|  /           |",
+        "|              |",
+        "|              |",
+        "================"]
+        return vidas4
+    elif vidas == 3:
+        vidas3 = [
+        "|"+mensaje+"|",
+        "+---+          |",
+        "|   |          |",
+        "|   O          |",
+        "|  /|          |",
+        "|              |",
+        "|              |",
+        "================"]
+        return vidas3
+    elif vidas == 2:
+        vidas2 = [
+        "|"+mensaje+"|",
+        "+---+          |",
+        "|   |          |",
+        "|   O          |",
+        "|  /|\         |",
+        "|              |",
+        "|              |",
+        "================"] 
+        return vidas2
+    elif vidas == 1:
+        vidas1 = [
+        "|"+mensaje+"|",
+        "+---+          |",
+        "|   |          |",
+        "|   O          |",
+        "|  /|\         |",
+        "|  /           |",
+        "|              |",
+        "================"] 
+        return vidas1
+    elif vidas <= 0:
+        vidas0 = [
+        "|"+mensaje+"|",
+        "+---+          |",
+        "|   |          |",
+        "|   O          |",
+        "|  /|\         |",
+        "|  / \         |",
+        "|              |",
+        "================"] 
+        return vidas0 
+  ```
+</p></details></br>
+
+
++ def juegonormal(vidas,idioma):
+   
+ <details><summary> Funcion :</summary><p> 
+  
+``` python
+def juegonormal(vidas,idioma):
+    """
+    Esta función muestra la representación gráfica del juego del ahorcado en la dificultad normal.
+
+    Args:
+        vidas (int): El número de vidas restantes del jugador.
+        idioma (int): El idioma elegido por el jugador. 1 para español, 2 para inglés.
+
+    Returns:
+        list: Una lista que representa la imagen del juego del ahorcado según el número de vidas restantes.
+    """
+    if idioma == 1:
+        mensaje = "tienes "+str(vidas+1)+" vidas"
+    if idioma == 2:
+        mensaje = "You have "+str(vidas+1)+" lives"
+
+    if vidas == 5:
+        vidas5 = [
+        "|"+mensaje+"|",
+        "+              |",
+        "|              |",
+        "|              |",
+        "|              |",
+        "|              |",
+        "|              |",
+        "================"]
+        return vidas5
+    elif vidas == 4:
+        vidas4 = [
+        "|"+mensaje+"|",
+        "+--+           |",
+        "|              |",
+        "|              |",
+        "|              |",
+        "|              |",
+        "|              |",
+        "================"]
+        return vidas4
+    elif vidas == 3:
+        vidas3 = [
+        "|"+mensaje+"|",
+        "+---+          |",
+        "|   |          |",
+        "|              |",
+        "|              |",
+        "|              |",
+        "|              |",
+        "================"]
+        return vidas3
+    elif vidas == 2:
+        vidas2 = [
+        
+        "|"+mensaje+"|",
+        "+---+          |",
+        "|   |          |",
+        "|   O          |",
+        "|              |",
+        "|              |",
+        "|              |",
+        "================"]
+        return vidas2
+    elif vidas == 1:
+        vidas1 = [
+        
+        "|"+mensaje+"|",
+        "+---+          |",
+        "|   |          |",
+        "|   O          |",
+        "|  /|\         |",
+        "|              |",
+        "|              |",
+        "================"]
+        return vidas1
+    elif vidas <= 0:
+        vidas0 = [
+        "|"+mensaje+"|",
+        "+---+          |",
+        "|   |          |",
+        "|   O          |",
+        "|  /|\         |",
+        "|  / \         |",
+        "|              |",
+        "================"] 
+        return vidas0  
+  ```
+</p></details></br>
+
+
 + def juegodificil(vidas,idioma):
+   
+ <details><summary> Funcion :</summary><p> 
+  
+``` python
+def juegodificil(vidas,idioma):
+    """
+    Esta función muestra la representación gráfica del juego del ahorcado en la dificultad difícil.
+
+    Args:
+        vidas (int): El número de vidas restantes del jugador.
+        idioma (int): El idioma elegido por el jugador. 1 para español, 2 para inglés.
+
+    Returns:
+        list: Una lista que representa la imagen del juego del ahorcado según el número de vidas restantes.
+    """
+    if idioma == 1:
+        mensaje = "tienes "+str(vidas+1)+" vidas"
+    if idioma == 2:
+        mensaje = "You have "+str(vidas+1)+" lives"
+
+    if vidas == 3:
+        vidas3 = [
+        "|"+mensaje+"|",    
+        "+--+           |",
+        "|              |",
+        "|              |",
+        "|              |",
+        "|              |",
+        "|              |",
+        "================"]
+        return vidas3
+    elif vidas == 2:
+        vidas2 = [
+        "|"+mensaje+"|",   
+        "+--+           |",
+        "|   |          |",
+        "|   O          |",
+        "|              |",
+        "|              |",
+        "|              |",
+        "================"]
+        return vidas2
+    elif vidas == 1:
+        vidas1 = [
+        "|"+mensaje+"|",
+        "+---+          |",
+        "|   |          |",
+        "|   O          |",
+        "|  /|\         |",
+        "|              |",
+        "|              |",
+        "================"]
+        return vidas1
+    elif vidas <= 0:
+        vidas0 = [
+        "|"+mensaje+"|",
+        "+---+          |",
+        "|   |          |",
+        "|   O          |",
+        "|  /|\         |",
+        "|  / \         |",
+        "|              |",
+        "================"]
+        return vidas0  
+  ```
+</p></details></br>
+
+
 
 + def dificultad(dif):
+  
+ <details><summary> Funcion :</summary><p> 
+  
+``` python
+def dificultad(dif):
+    """
+    Esta función devuelve el número de vidas según la dificultad seleccionada.
+
+    Args:
+        dif (int): La dificultad seleccionada. 1 para fácil, 2 para normal, 3 para difícil.
+
+    Returns:
+        int: El número de vidas correspondiente a la dificultad seleccionada.
+    """
+    if dif==1 :
+        vidas=7
+    elif dif==2:
+        vidas = 5
+    elif dif == 3:
+        vidas = 3
+    else :
+        print("La dificultad que seleccionó no existe")  
     
+    return vidas  
+  ```
+</p></details></br>
+
+ 
 + def llamardificultad(dif,vidas):
+  
+ <details><summary> Funcion :</summary><p> 
+  
+``` python
+def llamardificultad(dif,vidas):
+    """
+    Esta función devuelve el juego correspondiente a la dificultad y número de vidas especificados.
+
+    Args:
+        dif (int): La dificultad seleccionada. 1 para fácil, 2 para normal, 3 para difícil.
+        vidas (int): El número de vidas disponibles.
+        idioma (int): El idioma seleccionado. 1 para español, 2 para inglés.
+
+    Returns:
+        list: El juego correspondiente a la dificultad y número de vidas especificados.
+    """
+    if dif==1 :
+        juego = juegofacil(vidas,idioma)
+    elif dif==2:
+        juego = juegonormal(vidas,idioma)
+    elif dif == 3:
+        juego = juegodificil(vidas,idioma)
+    return juego        
+  
+  ```
+</p></details></br>
+
             
 + def ganar(idioma):
+  
+ <details><summary> Funcion :</summary><p> 
+  
+``` python
+def ganar(idioma):
+    """
+    Imprime una secuencia animada de victoria en el juego.
+
+    Args:
+        idioma (int): El idioma seleccionado. 1 para español, 2 para inglés.
+    """
+
+    if idioma==1:
+        mensaje1 = "Quizas..."
+        mensaje2 = "Deberia "
+        mensaje3 = "Seguir"
+        mensaje4 = "luchando"
+        mensaje5 = "FELICIDADES HAS GANADO"
+        mensaje6 = "Presione Enter para continuar..."
+    if idioma==2:
+        mensaje1 = "Maybe... "
+        mensaje2 = "I should"
+        mensaje3 = "still "
+        mensaje4 = "fighting"
+        mensaje5 = "Congratulations, you have won."
+        mensaje6 = "Press Enter to continue..."
+    ganar1= [
+        "              |      ",
+        "             /O\ .   ",
+        "            |\|/     ",
+        "            |/ \     ",
+        "            |---|    ",
+        "====================="]
+    for i in ganar1:
+        print(i)
+    time.sleep(1)
+    clear()
+    ganar2= [
+        "              |      ",
+        "             /O\ ..  ",
+        "            |\|/     ",
+        "            |/ \     ",
+        "            |---|    ",
+        "====================="]
+    for i in ganar2:
+        print(i)
+    time.sleep(1)
+    clear()
+    ganar3= [
+        "              |      ",
+        "             /O\ ... ",
+        "            |\|/     ",
+        "            |/ \     ",
+        "            |---|    ",
+        "====================="]
+    for i in ganar3:
+        print(i)
+    time.sleep(1)
+    clear()
+    ganar4= [
+        "                 |   ",
+        "  "+mensaje1+"   O °°   ",
+        "            | |//    ",
+        "            |/ \     ",
+        "            |---|    ",
+        "====================="]
+    for i in ganar4:
+        print(i)
+    time.sleep(1)
+    clear()
+    ganar5= [
+        "                 |   ",
+        "  "+mensaje2+"    O      ",
+        "  "+mensaje3+"    |/|\     ",
+        "  "+mensaje4+"  |/ \     ",
+        "            |---|    ",
+        "====================="]
+    for i in ganar5:
+        print(i)
+    time.sleep(1)
+    clear()
+    ganar6= [
+        "                 |   ",
+        "                     ",
+        "          O   |      ",
+        "         /|\  |      ",
+        "         / \  |---|  ",
+        "====================="]
+    for i in ganar6:
+        print(i)
+    print(mensaje5)
+    input(mensaje6)  
+  ```
+</p></details></br>
+
     
 + def perder(vidas,idioma):
   
+ <details><summary> Funcion :</summary><p> 
+  
+``` python
+def perder(vidas,idioma):
+    """
+    Genera la representación visual de una derrota en el juego.
+
+    Args:
+        vidas (int): La cantidad de vidas restantes del jugador.
+        idioma (int): El idioma seleccionado. 1 para español, 2 para inglés.
+
+    Returns:
+        list: Una lista que contiene la representación visual de la derrota en el juego.
+    """
+    if idioma==1:
+        mensaje="HAS PERDIDO"
+    if idioma==2:
+        mensaje ="You have lost"   
+    if vidas <= 0:
+        perderx = [
+        "--------------+      ",
+        "              |      ",
+        "              O      ",
+        "             /|\     ",
+        "           _ / \     ",
+        "      ____|_         ",
+        "=====================",
+        "    "+mensaje+"      "]
+        return perderx 
+  ```
+</p></details></br>
+
+  
 + def funcionamineto(adivinar, idioma, vidas):
+  
+ <details><summary> Funcion :</summary><p> 
+  
+``` python
+def funcionamineto(adivinar, idioma, vidas):
+    """
+    Controla el funcionamiento del juego del ahorcado.
+
+    Args:
+        adivinar (list): Una lista que representa la palabra a adivinar, donde cada letra es un elemento de la lista.
+        idioma (int): El idioma seleccionado. 1 para español, 2 para inglés.
+        vidas (int): La cantidad de vidas restantes del jugador.
+
+    Returns:
+        None
+    """
+    while True: # El ciclo se ejecutara hasta que se rompa con un "break"
+        juego = llamardificultad(dif,vidas) # Llama a la funcion juego
+        clear()
+        encontrado = False # Se crea una bandera con el valor false, que serivira para saber si el usario atino o no alguna letra del ahorcado 
+        for i in juego:
+            print(i)    
+        palabraadivinar =' '.join(adivinar) # Se modifica la lista de espacios para que se imprima de manera bonita ["_", "_", "_" ] -> _ _ _ 
+        print("|"  + str(palabraadivinar) +    "|")
+        if idioma==1: # Dependiendo de la          
+            letra = (str(input("Ingresa una consonante o una vocal: "))).upper() # Todas las letras que digite se pasaran automaticamente a mayusculas, para no haber errores al momento de digitar
+        if idioma==2:
+            letra = (str(input("Enter a consonant or a vowel: "))).upper()
+
+        for j in range(len(palabra)): # Se itera segun el tamaño de la palabra
+            if letra == palabra[j]: # Si la letra que se dijito, es igual a alguna letra de la palabra 
+                adivinar[j] = letra # En la lista de adivinar, se modifica el espacio donde iria ese letra: "_ _ _" -> "_ e _"
+                encontrado = True # La bandera toma valor True, lo que significa que el usurio adivino una letra
+        clear()
+        if not encontrado: # Si la bandera no tomo el valor true, significa que se equivoco
+            vidas -= 1 # Se resta una vida
+            
+        if not "_" in adivinar: # Si no hay ningun "_" en la lista de adivinar, significa que ya atino todos las letras
+            ganaste = ganar(idioma) # Se imprime la animacion de ganar
+            break # Se acaba el ciclo
+        
+        if "_" in adivinar and vidas < 0: # Si siguen habiendo espacios "_" en la lista de adivinar y el usaurio ya no tiene mas vidas
+            if idioma==1: # Segun el idioma dira cual fue la palabra que no adivino
+                print("La palabra era: " + palabra)
+            if idioma==2:
+                print("The word was: " + palabra)
+            perderx = perder(vidas,idioma) # Y muestra la animacion de game over
+            for i in perderx: 
+                print(i)
+            break # Se acaba el ciclo  
+  ```
+</p></details></br>
+
     
 + def funcionamineto2pj(idioma, vida1, vida2):
+  
+ <details><summary> Funcion :</summary><p> 
+  
+``` python
+def funcionamineto2pj(idioma, vida1, vida2):
+    """
+    Controla el funcionamiento del juego del ahorcado para dos jugadores.
+
+    Args:
+        idioma (int): El idioma seleccionado. 1 para español, 2 para inglés.
+        vida1 (int): La cantidad de vidas del jugador 1.
+        vida2 (int): La cantidad de vidas del jugador 2.
+
+    Returns:
+        None
+    """
+    turno = 1 # se define el valor de la varible "turno" que decidira a cual jugador le toca jugar
+    palabra1 = elegirpalabra() 
+    palabra2 = elegirpalabra()
+    adivinar1 = Funcionadivinar(palabra1)
+    adivinar2 = Funcionadivinar(palabra2)
+    ganador = False # Se crea la variable ganador con el valor booleano false, que sirvira para decirdir quien gano o perdio
+    clear()
+    while True: # Bucle que se repite indeterminadamente hasta que se rompa con un "break"
+        palabraadivinar1 = ' '.join(adivinar1)
+        palabraadivinar2 = ' '.join(adivinar2)
+        while turno == 1: # Cuando el turno sea "1" (Jugador uno)
+            turno = 2 # Automaticamente el turno pasa a ser 2
+            juego1 = llamardificultad(dif, vida1)
+            juego2 = llamardificultad(dif, vida2)
+            clear()
+            encontrado1 = False # Se define el valor encontrado
+            for i in range(len(juego1)):
+                print(juego1[i],juego2[i]) # Se imprimen los dos tableros de juego, para mostrar al tiempo ambos procesos
+            palabraadivinar1 = ' '.join(adivinar1)
+            print("|" + str(palabraadivinar1) + "|", "|" + str(palabraadivinar2) + "|") # Se imprime los dos espacios de palabras de cada jugador 
+            
+            if idioma == 1:
+                letra1 = (str(input("jugador 1: Ingresa una consonante o una vocal: "))).upper()
+            if idioma == 2:
+                letra1 = (str(input("Player 1: Enter a consonant or a vowel: "))).upper()
+
+            for j in range(len(palabra1)):
+                if letra1 == palabra1[j]:
+                    adivinar1[j] = letra1
+                    encontrado1 = True
+
+            if not encontrado1: 
+                vida1 -= 1
+            clear()
+            if not "_" in adivinar1: # Si ya no hay 
+                ganaste1 = ganar(idioma)
+                ganador = 1
+                break
+
+            if "_" in adivinar1 and vida1 < 0:
+                if idioma == 1:
+                    print("La palabra era: " + palabra1)
+                if idioma == 2:
+                    print("The word was: " + palabra1)
+                perderx1 = perder(vida1, idioma)
+                for i in perderx1:
+                    print(i)
+                break
+        clear()
+        if ganador == 1:
+            print("Felicidades el jugador 1 gano")
+            print("El jugador 2 no adivino la palabra" + str(palabra2))
+            break
+        elif ganador == 2:
+            print("Felicidades el jugador 2 gano")
+            print("El jugador 1 no adivino la palabra" + str(palabra1))
+            break
+        if vida1 <= 0 and vida2 > 0:
+            print("Jugador 2 gano, sobrevivio mas tiempo")
+            print("La palabra del jugador 1 era: " + str(palabra1))
+            print("La palabra del jugador 2 era: " + str(palabra2))
+            break
+        if vida2 <= 0 and vida1 > 0:
+            print("Jugador 1 gano, sobrevivio mas tiempo")
+            print("La palabra del jugador 1 era: " + str(palabra1))
+            print("La palabra del jugador 2 era: " + str(palabra2))            
+            break        
+        
+        
+        while turno == 2:
+            turno = 1
+            juego1 = llamardificultad(dif, vida1)
+            juego2 = llamardificultad(dif, vida2)
+            clear()
+            encontrado2 = False
+            for i in range(len(juego2)):
+                print(juego1[i],juego2[i])
+            palabraadivinar2 = ' '.join(adivinar2)
+            print("|" + str(palabraadivinar1) + "|", "|" + str(palabraadivinar2) + "|")
+
+            if idioma == 1:
+                letra2 = (str(input("jugador 2: Ingresa una consonante o una vocal: "))).upper()
+            if idioma == 2:
+                letra2 = (str(input("Player 2: Enter a consonant or a vowel: "))).upper()
+            
+            for k in range(len(palabra2)):
+                if letra2 == palabra2[k]:
+                    adivinar2[k] = letra2
+                    encontrado2 = True
+
+            if not encontrado2:
+                vida2 -= 1
+            clear()
+            if not "_" in adivinar2:
+                ganaste2 = ganar(idioma)
+                ganador = 2
+                break
+
+            if "_" in adivinar2 and vida2 < 0:
+                if idioma == 1:
+                    print("La palabra era: " + palabra2)
+                if idioma == 2:
+                    print("The word was: " + palabra2)
+                perderx2 = perder(vida2, idioma)
+                for i in perderx2:
+                    print(i)
+                ganador = False
+                break
+        if ganador == 1:
+            print("Felicidades el jugador 1 gano")
+            print("El jugador 2 no adivino la palabra" + str(palabra2))
+            break
+        elif ganador == 2:
+            print("Felicidades el jugador 2 gano")
+            print("El jugador 1 no adivino la palabra" + str(palabra1))
+            break
+        if vida1 <= 0 and vida2 > 0:
+            print("Jugador 2 gano, sobrevivio mas tiempo")
+            print("La palabra del jugador 1 era: " + str(palabra1))
+            print("La palabra del jugador 2 era: " + str(palabra2))
+            break
+        if vida2 <= 0 and vida1 > 0:
+            print("Jugador 1 gano, sobrevivio mas tiempo")
+            print("La palabra del jugador 1 era: " + str(palabra1))
+            print("La palabra del jugador 2 era: " + str(palabra2))            
+            break   
+  ```
+</p></details></br>
+
   
 ## Idioma
 
