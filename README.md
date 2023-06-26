@@ -1079,7 +1079,8 @@ def Funcionadivinar(palabra) -> list:
 
  **La funcion funcionamiento(1 jugador)**
 <br>
-Esta funcion es la que une todas las funciones vistas anteriormente para que el juego corra,
+Esta funcion es la que une todas las funciones vistas anteriormente para que el juego corra.Esta función controla el  juego del ahorcado, solicitando al jugador que ingrese letras y actualizando la lista de adivinar en consecuencia. Verifica si se ha ganado o perdido el juego y muestra las animaciones correspondientes.
+
 
  <details><summary> Funcion funcionamineto(adivinar, idioma, vidas):</summary><p> 
   
