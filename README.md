@@ -1,5 +1,5 @@
 # Hangman game made by Pyth - Ohm
-#### Integrantes:
+#### **Integrantes:**
 ##### Tomas Santiago Forero Duarte
 ##### Andrés David Ortiz Rivas
 ##### Andrés Felipe Vega Bermeo
@@ -63,7 +63,7 @@ flowchart TD
     b --> lo[Ganaste \n Aparece animacion de ganar ]
 ```
 # Desarrollo y codigo del Juego
-### 1. Idioma
+## 1. Idioma
 Al principio del codigo se le preguntara al usuario en que idioma quiere jugar
 <br>
 Para configurar el idioma de nuestro proyecto utilizamos los siguientes dos idiomas:
@@ -162,7 +162,7 @@ Teniendo esto en cuenta, aplicamos este mismo concepto en las partes del codigo 
 + En el texto que sale al preguntar las letras
 + El diccionario con todas las palabras 
 
-### 2. Animacion inicial
+## 2. Animacion inicial
 
 Luego de haber elegido el idioma, saltara una animacion de inicio, esta se realizo utilizando la biblioteca time con el codigo time.sleep() y la biblioteca Os, la cual limpia el terminal cada vez que se llama, usando clear().
 
@@ -279,7 +279,7 @@ def inicio(idioma):
   ```
 </p></details></br>
 
-### 3. Palabras
+## 3. Palabras
 **La Funcion palabras**
 <br>
 Para almacenar las palabras que usa el juego, se opto por el uso de un diccionario donde la llave es una valor numerico, cada llave regresa una lista de palabras con una tematica diferente. Esta funcion retorna un diccionario con palabras.
@@ -433,7 +433,7 @@ def palabras(idioma):
   ```
 </p></details></br>
 
-### 4. Interfaz
+## 4. Interfaz
 Para definir las distintas modalidades del juego (Como la eleccion de 1 o 2 jugadores, la tematica o la dificultad), se realizo una funcion llamada interfaz, que al ejecutarla la pregunta al usuario los siguientes valores y los retornara:
 + x: Variable que definira si el juego es para 1 o para 2 personas
 + y: Variable que definira la tematica del ahorcado
@@ -873,7 +873,7 @@ def llamardificultad(dif,vidas):
   ```
 </p></details></br>
 
-### 6. Fin del juego 
+## 6. Fin del juego 
 ##### def ganar(idioma):
 
 La función ganar muestra la animación de victoria en el juego . Dependiendo del idioma seleccionado, se definen mensajes específicos. La animación se logra imprimiendo diferentes marcos en cada iteración del bucle. Se utiliza time.sleep(1) para pausar la ejecución y crear el efecto de animación. La función clear() se utiliza para limpiar el terminal . Al final de la animación, se muestra un mensaje de victoria y se espera la entrada del usuario
@@ -1008,7 +1008,7 @@ def perder(vidas,idioma):
 </p></details></br>
 
   
-### 7. Funcionamiento
+## 7. Funcionamiento
 **La funcion adivinar**
 <br>
 Esta funcion depende de la variable palabra, (Palabra elegida al azar mediante la funcion elegir palabra), el proposito de esta funcion es hacer el caracteristico espacio para adivinar palabras del juego de ahorcado ejemplo:
@@ -1245,7 +1245,7 @@ def funcionamineto2pj(idioma, vida1, vida2):
   
 
 
-### 8. Funcion main
+## 8. Funcion main
 Dentro de la funcion main:
 + Antes de ejecutar todo el codigo se le pregunta al usuario el idioma, lo cual decidira que mensajes se imprimiran en el terminal
 + se llaman la mayoria de las funciones vistas anteriormente
