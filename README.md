@@ -7,7 +7,7 @@
 #### Logo de pyth - Ohm:
 [![c67e2c4b-33f7-417f-94a8-1adc607ac09f.jpg](https://i.postimg.cc/bvbvZzwZ/c67e2c4b-33f7-417f-94a8-1adc607ac09f.jpg)](https://postimg.cc/GBLRNnYR)
 #
-
+## En este repositorio, se presenta el desarrollo y la realización del juego de ahorcado,  con opciones de idioma , multijugador y grado de dificultad .
 # Bibliotecas
 ##### Import random
 La biblioteca import random nos sirve para importar el módulo random, que nos da funciones para generar números aleatorios y hacer selecciones aleatorias.
