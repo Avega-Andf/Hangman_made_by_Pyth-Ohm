@@ -915,7 +915,7 @@ def llamardificultad(dif,vidas):
 </p></details></br>
 
 ### Fin del juego 
-##### def ganar(idioma):
+##### def ganar(idioma):La función ganar muestra la animación de victoria en el juego . Dependiendo del idioma seleccionado, se definen mensajes específicos. La animación se logra imprimiendo diferentes marcos en cada iteración del bucle. Se utiliza time.sleep(1) para pausar la ejecución y crear el efecto de animación. La función clear() se utiliza para limpiar el terminal . Al final de la animación, se muestra un mensaje de victoria y se espera la entrada del usuario
   
  <details><summary> Funcion :</summary><p> 
   
@@ -1012,7 +1012,7 @@ def ganar(idioma):
 </p></details></br>
 
     
-##### def perder(vidas,idioma):
+##### def perder(vidas,idioma):Si la cantidad de vidas restantes es menor o igual a 0, se genera una lista que contiene la representación visual de la derrota.
   
  <details><summary> Funcion :</summary><p> 
   
