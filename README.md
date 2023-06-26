@@ -1296,3 +1296,23 @@ if __name__ == "__main__":
 
 
 # Requisitos del juego y como correrlo
+
+#### 1. Instalación de Python
+El primer paso para poder correr este juego es tener la version de python mas reciente instalada, si no la posees se puede descargar facilmente desde la Microsoft Store
+[![python.png](https://i.postimg.cc/tRfYvzMs/python.png)](https://postimg.cc/HjwYVbHm)
+Si no conseguiste descargarlo por medio de la Microsoft Store, puedes tambien descargarlo por medio de la pagina oficial de python: [link]https://www.python.org/downloads/
+
+#### 2. Descargar Juego
+Puedes descargar el juego desde el mismo repositorio, como lo indica la imagen:
+[![Captura-de-pantalla-2023-06-26-004512.png](https://i.postimg.cc/g2DDhJYq/Captura-de-pantalla-2023-06-26-004512.png)](https://postimg.cc/PCCYsdvP)
+Se descargara un archizo .Zip, el cual se debe descomprimir.
+
+#### 3. Requisitos
+A pesar de que el juego usa 3 bibliotecas como lo son time, random y Os, todas estas ya vienen instaladas en el python mas reciente, por lo que no deberas descargar ninguna biblioteca externa
+
+#### 4. Jugar 
+Una vez ya realizado los anteriores pasos puedes abrir el Juego desde python y podras comenzar a jugarlo
+[![Captura-de-pantalla-2023-06-26-005427.png](https://i.postimg.cc/5yQZnzPC/Captura-de-pantalla-2023-06-26-005427.png)](https://postimg.cc/rRcnpD2V)
+
+# Gracias por leer :D
+#### Viva Pyth - Ohm
