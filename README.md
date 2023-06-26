@@ -90,48 +90,67 @@ Esta modificacion la hicimos por medio del condicional "if", dentro del cual, co
 <details><summary> Ejemplo de uso en la funcion interfaz :</summary><p>
  
 ``` python
- def interfaz(idioma):
+def interfaz(idioma):
+    """
+    Esta función muestra la interfaz de configuración del juego del ahorcado en el idioma especificado.
+
+    Args:
+        idioma (int): El idioma elegido por el usuario. 1 para español, 2 para inglés.
+
+    Returns:
+        tuple: Una tupla que contiene las opciones elegidas por el usuario:
+               (x, y, dif), donde x es la opción de jugar solo o en pareja,
+               y es la opción de temática del ahorcado, y dif es la dificultad seleccionada.
+    """
     if idioma==1:
+        # Seleccionar 1 o 2 jugadores
         print("JUEGO DEL AHORCADO")
         print("Bienvenido al juego, quieres jugar solo o de a dos personas:?")
         print("1.solo\n2. parejas")
         x = int(input(""))
-        if x<1 or x>2:
-            print("Esta opcion no existe ")
-            
+        while x<1 or x>2:
+            print("Esa opcion no es valida")
+            x = int(input(""))
+        # Elegir tematica    
         print("Elige la tematica del ahorcado: ")
         print(" 1. frutas \n 2. superheroes \n 3. animales \n 4.paises \n 5. medios de transporte \n 6. Partes del cuerpo ")
         print(" 7. Objetos del hogar \n 8. Prendas de vestir \n 9. Generos Musicales \n 10. Escritores famosos ")
         print(" 11. Equipos de Futbol \n 12. jugadores de furbol \n 13. Cantantes famosos \n 14. Razas de perros")
-        print(" 15. Utiles escolares \n 16. Peliculas famosas ")
+        print(" 15. Utiles escolares \n 16. Peliculas famosas \n 17. Pokemon ")
         y = int(input(""))
-        if y<1 or y>16:
-            print("Esta opcion no existe ")
+        while y<1 or y>16:
+            print("Esa opcion no es valida")
+            y = int(input(""))
+        # Seleccionar dificultad    
         print("Seleccione la dificultad deseada...\n"+" 1.facil \n"+" 2.normal \n"+" 3.dificil ")
         dif=int(input(""))
-        if dif<1 or dif>3:
-            print("Esta opcion no existe ")
+        while dif<1 or dif>3:
+            print("Esa opcion no es valida ")
+            dif=int(input(""))
         return x, y, dif
     if idioma==2:
         print("HANGMAN GAME")
         print("Welcome to the game, do you want to play alone or with two players?")
         print("1. alone\n2. couples")
         x = int(input(""))
-        if x<1 or x>2:
-            print("Esta opcion no existe ")
+        while x<1 or x>2:
+            print("That option is not valid")
+            x = int(input(""))
         print("Choose the theme of Hangman:")
         print(" 1. fruits \n 2. superheroes \n 3. animals \n 4. countrie \n 5. means of transportation \n 6. body parts")
         print(" 7. household objects \n 8. clothing \n 9. music genres \n 10. famous writers")
         print(" 11. soccer teams \n 12. soccer players \n 13. famous singers \n 14. dog breeds")
-        print(" 15. school supplies")
+        print(" 15. school supplies \n 16. Pokemon")
         y = int(input(""))
-        if y<1 or y>16:
-            print("Esta opcion no existe ")
+        while y<1 or y>16:
+            print("That option is not valid")
+            y = int(input(""))
         print("Select the desired difficulty... \n 1.easy\n 2.normal\n 3.difficult")
         dif=int(input(""))
-        if dif<1 or dif>3:
-            print("Esta opcion no existe ")
-        return x, y, dif
+        while dif<1 or dif>3:
+            print("That option is not valid")
+            dif=int(input(""))
+        return x, y, dif  
    ```
 </p></details></br>
 
@@ -436,45 +455,53 @@ def interfaz(idioma):
                y es la opción de temática del ahorcado, y dif es la dificultad seleccionada.
     """
     if idioma==1:
+        # Seleccionar 1 o 2 jugadores
         print("JUEGO DEL AHORCADO")
         print("Bienvenido al juego, quieres jugar solo o de a dos personas:?")
         print("1.solo\n2. parejas")
         x = int(input(""))
-        if x<1 or x>2:
-            print("Esta opcion no existe ")
-            
+        while x<1 or x>2:
+            print("Esa opcion no es valida")
+            x = int(input(""))
+        # Elegir tematica    
         print("Elige la tematica del ahorcado: ")
         print(" 1. frutas \n 2. superheroes \n 3. animales \n 4.paises \n 5. medios de transporte \n 6. Partes del cuerpo ")
         print(" 7. Objetos del hogar \n 8. Prendas de vestir \n 9. Generos Musicales \n 10. Escritores famosos ")
         print(" 11. Equipos de Futbol \n 12. jugadores de furbol \n 13. Cantantes famosos \n 14. Razas de perros")
         print(" 15. Utiles escolares \n 16. Peliculas famosas \n 17. Pokemon ")
         y = int(input(""))
-        if y<1 or y>16:
-            print("Esta opcion no existe ")
+        while y<1 or y>16:
+            print("Esa opcion no es valida")
+            y = int(input(""))
+        # Seleccionar dificultad    
         print("Seleccione la dificultad deseada...\n"+" 1.facil \n"+" 2.normal \n"+" 3.dificil ")
         dif=int(input(""))
-        if dif<1 or dif>3:
-            print("Esta opcion no existe ")
+        while dif<1 or dif>3:
+            print("Esa opcion no es valida ")
+            dif=int(input(""))
         return x, y, dif
     if idioma==2:
         print("HANGMAN GAME")
         print("Welcome to the game, do you want to play alone or with two players?")
         print("1. alone\n2. couples")
         x = int(input(""))
-        if x<1 or x>2:
-            print("Esta opcion no existe ")
+        while x<1 or x>2:
+            print("That option is not valid")
+            x = int(input(""))
         print("Choose the theme of Hangman:")
         print(" 1. fruits \n 2. superheroes \n 3. animals \n 4. countrie \n 5. means of transportation \n 6. body parts")
         print(" 7. household objects \n 8. clothing \n 9. music genres \n 10. famous writers")
         print(" 11. soccer teams \n 12. soccer players \n 13. famous singers \n 14. dog breeds")
         print(" 15. school supplies \n 16. Pokemon")
         y = int(input(""))
-        if y<1 or y>16:
-            print("Esta opcion no existe ")
+        while y<1 or y>16:
+            print("That option is not valid")
+            y = int(input(""))
         print("Select the desired difficulty... \n 1.easy\n 2.normal\n 3.difficult")
         dif=int(input(""))
-        if dif<1 or dif>3:
-            print("Esta opcion no existe ")
+        while dif<1 or dif>3:
+            print("That option is not valid")
+            dif=int(input(""))
         return x, y, dif  
   ```
 </p></details></br>
