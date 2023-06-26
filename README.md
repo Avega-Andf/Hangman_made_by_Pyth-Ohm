@@ -7,7 +7,8 @@
 #### Logo de pyth - Ohm:
 [![c67e2c4b-33f7-417f-94a8-1adc607ac09f.jpg](https://i.postimg.cc/bvbvZzwZ/c67e2c4b-33f7-417f-94a8-1adc607ac09f.jpg)](https://postimg.cc/GBLRNnYR)
 #
-## Bibliotecas
+
+# Bibliotecas
 ##### Import random
 La biblioteca import random nos sirve para importar el módulo random, que nos da funciones para generar números aleatorios y hacer selecciones aleatorias.
 Al importar random, se obtiene acceso a funciones como random.random() , random.randint() y random.choice() 
@@ -36,7 +37,7 @@ def clear():#
   else: # en casi de que el sistema operativo no sea windows se utiliza la siguiente funcion
     os.system("clear")#Este comando  se encarga de limpiar la pantalla de la terminal en caso de que no sea windows.
    ```
-## Funcionamiento logico del juego
+# Funcionamiento logico del juego
 
 ```mermaid
 flowchart TD
@@ -61,8 +62,8 @@ flowchart TD
     i --> H;
     b --> lo[Ganaste \n Aparece animacion de ganar ]
 ```
-## Inicio
-### Idioma
+# Desarrollo y codigo del Juego
+### 1. Idioma
 Al principio del codigo se le preguntara al usuario en que idioma quiere jugar
 <br>
 Para configurar el idioma de nuestro proyecto utilizamos los siguientes dos idiomas:
@@ -161,7 +162,7 @@ Teniendo esto en cuenta, aplicamos este mismo concepto en las partes del codigo 
 + En el texto que sale al preguntar las letras
 + El diccionario con todas las palabras 
 
-### Animacion inicial
+### 2. Animacion inicial
 
 Luego de haber elegido el idioma, saltara una animacion de inicio, esta se realizo utilizando la biblioteca time con el codigo time.sleep() y la biblioteca Os, la cual limpia el terminal cada vez que se llama, usando clear().
 
@@ -278,7 +279,7 @@ def inicio(idioma):
   ```
 </p></details></br>
 
-### Palabras
+### 3. Palabras
 **La Funcion palabras**
 <br>
 Para almacenar las palabras que usa el juego, se opto por el uso de un diccionario donde la llave es una valor numerico, cada llave regresa una lista de palabras con una tematica diferente. Esta funcion retorna un diccionario con palabras.
@@ -432,7 +433,7 @@ def palabras(idioma):
   ```
 </p></details></br>
 
-### Interfaz
+### 4. Interfaz
 Para definir las distintas modalidades del juego (Como la eleccion de 1 o 2 jugadores, la tematica o la dificultad), se realizo una funcion llamada interfaz, que al ejecutarla la pregunta al usuario los siguientes valores y los retornara:
 + x: Variable que definira si el juego es para 1 o para 2 personas
 + y: Variable que definira la tematica del ahorcado
@@ -441,7 +442,6 @@ Para definir las distintas modalidades del juego (Como la eleccion de 1 o 2 juga
 <details><summary> Funcion def interfaz(idioma) :</summary><p> 
   
 ``` python
-
 def interfaz(idioma):
     """
     Esta función muestra la interfaz de configuración del juego del ahorcado en el idioma especificado.
@@ -457,7 +457,7 @@ def interfaz(idioma):
     if idioma==1:
         # Seleccionar 1 o 2 jugadores
         print("JUEGO DEL AHORCADO")
-        print("Bienvenido al juego, quieres jugar solo o de a dos personas:?")
+        print("Bienvenido al juego, quieres jugar solo o de a dos personas?")
         print("1.solo\n2. parejas")
         x = int(input(""))
         while x<1 or x>2:
@@ -470,7 +470,7 @@ def interfaz(idioma):
         print(" 11. Equipos de Futbol \n 12. jugadores de furbol \n 13. Cantantes famosos \n 14. Razas de perros")
         print(" 15. Utiles escolares \n 16. Peliculas famosas \n 17. Pokemon ")
         y = int(input(""))
-        while y<1 or y>16:
+        while int(y) < 1 or int(y) > 17:
             print("Esa opcion no es valida")
             y = int(input(""))
         # Seleccionar dificultad    
@@ -509,7 +509,7 @@ def interfaz(idioma):
 
 
 
-### Dificultad
+## 5. Dificultad
 Al momento de elegir el método por el cual acoomodariamos la dificultad de juego teniamos 2 opciones: 
 la primera, era por la cantidad de letras de las palabras y la segunda opcion, era por la cantidad de vidas que tendria el jugador.
 Para aumentar o disminuir la dificultad del juego se dicidio por el segundo metodo.
@@ -539,11 +539,23 @@ Esta parte del codigo se encuentra en la funcion de interfaz que se mostrara mas
 Para implementar esto en el juego, creamos una funcion para cada dificultad. En estas funciones se mostraba al usuario una imagen dependiendo de la cantidad de vidas que le queden al usuario en la partida. 
 + Esto lo podremos observar en el siguiente codigo (correspondiente a la dificultad dificil)
 
-<details><summary> Funcion dificultad dificil :</summary><p>
- 
-```python
- 
+
+##### def juegodificil(vidas,idioma):
+   
+ <details><summary> Funcion juego dificil :</summary><p> 
+  
+``` python
 def juegodificil(vidas,idioma):
+    """
+    Esta función muestra la representación gráfica del juego del ahorcado en la dificultad difícil.
+
+    Args:
+        vidas (int): El número de vidas restantes del jugador.
+        idioma (int): El idioma elegido por el jugador. 1 para español, 2 para inglés.
+
+    Returns:
+        list: Una lista que representa la imagen del juego del ahorcado según el número de vidas restantes.
+    """
     if idioma == 1:
         mensaje = "tienes "+str(vidas+1)+" vidas"
     if idioma == 2:
@@ -582,7 +594,7 @@ def juegodificil(vidas,idioma):
         "|              |",
         "================"]
         return vidas1
-    elif vidas == 0:
+    elif vidas <= 0:
         vidas0 = [
         "|"+mensaje+"|",
         "+---+          |",
@@ -592,25 +604,15 @@ def juegodificil(vidas,idioma):
         "|  / \         |",
         "|              |",
         "================"]
-        return vidas0
-        
-```
+        return vidas0  
+  ```
 </p></details></br>
+
 
 Este proceso se hizo tambien para las otras dificultades, pero teniendo en cuenta, que las partes del "ahorcado" que se agregen por cada vida perdida sean proporocionales a las cantidad de vida de cada dificultad.
 Tambien se agrego arriba del dibujo un mensaje queva mostrando la cantidad de vidas actuales.
 
-
-
-
-
-
-
-  
- 
-##### def juegofacil(vidas,idioma):
-   
- <details><summary> Funcion :</summary><p> 
+ <details><summary> Funcion juego facil :</summary><p> 
   
 ``` python
 def juegofacil(vidas,idioma):
@@ -721,9 +723,7 @@ def juegofacil(vidas,idioma):
 </p></details></br>
 
 
-##### def juegonormal(vidas,idioma):
-   
- <details><summary> Funcion :</summary><p> 
+ <details><summary> Funcion juego normal :</summary><p> 
   
 ``` python
 def juegonormal(vidas,idioma):
@@ -814,74 +814,6 @@ def juegonormal(vidas,idioma):
 </p></details></br>
 
 
-##### def juegodificil(vidas,idioma):
-   
- <details><summary> Funcion :</summary><p> 
-  
-``` python
-def juegodificil(vidas,idioma):
-    """
-    Esta función muestra la representación gráfica del juego del ahorcado en la dificultad difícil.
-
-    Args:
-        vidas (int): El número de vidas restantes del jugador.
-        idioma (int): El idioma elegido por el jugador. 1 para español, 2 para inglés.
-
-    Returns:
-        list: Una lista que representa la imagen del juego del ahorcado según el número de vidas restantes.
-    """
-    if idioma == 1:
-        mensaje = "tienes "+str(vidas+1)+" vidas"
-    if idioma == 2:
-        mensaje = "You have "+str(vidas+1)+" lives"
-
-    if vidas == 3:
-        vidas3 = [
-        "|"+mensaje+"|",    
-        "+--+           |",
-        "|              |",
-        "|              |",
-        "|              |",
-        "|              |",
-        "|              |",
-        "================"]
-        return vidas3
-    elif vidas == 2:
-        vidas2 = [
-        "|"+mensaje+"|",   
-        "+--+           |",
-        "|   |          |",
-        "|   O          |",
-        "|              |",
-        "|              |",
-        "|              |",
-        "================"]
-        return vidas2
-    elif vidas == 1:
-        vidas1 = [
-        "|"+mensaje+"|",
-        "+---+          |",
-        "|   |          |",
-        "|   O          |",
-        "|  /|\         |",
-        "|              |",
-        "|              |",
-        "================"]
-        return vidas1
-    elif vidas <= 0:
-        vidas0 = [
-        "|"+mensaje+"|",
-        "+---+          |",
-        "|   |          |",
-        "|   O          |",
-        "|  /|\         |",
-        "|  / \         |",
-        "|              |",
-        "================"]
-        return vidas0  
-  ```
-</p></details></br>
-
 
 
 ##### def dificultad(dif):
@@ -941,8 +873,10 @@ def llamardificultad(dif,vidas):
   ```
 </p></details></br>
 
-### Fin del juego 
-##### def ganar(idioma):La función ganar muestra la animación de victoria en el juego . Dependiendo del idioma seleccionado, se definen mensajes específicos. La animación se logra imprimiendo diferentes marcos en cada iteración del bucle. Se utiliza time.sleep(1) para pausar la ejecución y crear el efecto de animación. La función clear() se utiliza para limpiar el terminal . Al final de la animación, se muestra un mensaje de victoria y se espera la entrada del usuario
+### 6. Fin del juego 
+##### def ganar(idioma):
+
+La función ganar muestra la animación de victoria en el juego . Dependiendo del idioma seleccionado, se definen mensajes específicos. La animación se logra imprimiendo diferentes marcos en cada iteración del bucle. Se utiliza time.sleep(1) para pausar la ejecución y crear el efecto de animación. La función clear() se utiliza para limpiar el terminal . Al final de la animación, se muestra un mensaje de victoria y se espera la entrada del usuario
   
  <details><summary> Funcion :</summary><p> 
   
@@ -1074,7 +1008,7 @@ def perder(vidas,idioma):
 </p></details></br>
 
   
-### Funcionamiento
+### 7. Funcionamiento
 **La funcion adivinar**
 <br>
 Esta funcion depende de la variable palabra, (Palabra elegida al azar mediante la funcion elegir palabra), el proposito de esta funcion es hacer el caracteristico espacio para adivinar palabras del juego de ahorcado ejemplo:
@@ -1164,7 +1098,7 @@ def funcionamineto(adivinar, idioma, vidas):
     
 
   
- <details><summary> Funcion :</summary><p> 
+ <details><summary> Funcionamiento2pj(idioma, vida1, vida2) :</summary><p> 
   
 ``` python
 def funcionamineto2pj(idioma, vida1, vida2):
@@ -1311,8 +1245,54 @@ def funcionamineto2pj(idioma, vida1, vida2):
   
 
 
+### 8. Funcion main
+Dentro de la funcion main:
++ Antes de ejecutar todo el codigo se le pregunta al usuario el idioma, lo cual decidira que mensajes se imprimiran en el terminal
++ se llaman la mayoria de las funciones vistas anteriormente
++ Usando la variable "x" se decidira si se llama la funcion funcionamiento (1 jugador) o la funcion funcionamiento2pj (2 jugadores)
++ Se inicia un bucle con una bandera y la variable seguir, esto para no tener que correr el codigo otra vez si quieres volver a jugar.
+<details><summary> Funcion Main :</summary><p> 
+  
+``` python
+if __name__ == "__main__":
+    clear()
+    print("choose a language/Elige un Idioma :\n 1.Español \n 2.English")
+    idioma=int(input("")) # Se digita el idioma deseado 1.Español, 2. Ingles
+    while idioma<1 or idioma>2:
+        print("Esta opcion no existe ")
+        idioma=int(input(""))
+    clear()
+    
+    llamar = inicio(idioma)
+    clear()
+    bandera = "True"
+    seguir = 0
+    while bandera == "True" or seguir == "Y": # Ciclo para repetir el juego si el jugador lo desea
+        bandera = "False"
+        lista = palabras(idioma)
+        x, y, dif = interfaz(idioma)
+        vidas = dificultad(dif)
+        palabra = elegirpalabra(lista,y)
+        clear()
+        clear()
+        if x == 1: # Un jugador 
+            adivinar = Funcionadivinar(palabra)
+            clear()
+            llamarfunc = funcionamineto(adivinar, idioma, vidas)   
+            print("Deseas seguir Jugando?")
+            print("Y. Yes, N. NO")
+            seguir = (str(input(" "))).upper()
+            clear()
+        if x == 2: # 2 jugadores
+            vida1 = dificultad(dif)
+            vida2 = dificultad(dif)
+            jugadores =  funcionamineto2pj(idioma, vida1, vida2)
+            print("Deseas seguir Jugando?")
+            print("Y. Yes, N. NO")
+            seguir = (str(input(" "))).upper()
+            clear()  
+  ```
+</p></details></br>
 
 
-
-
-
+# Requisitos del juego y como correrlo
